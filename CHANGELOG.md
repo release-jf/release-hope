@@ -4,6 +4,13 @@
 
 <!-- #region recent-beta -->
 
+## [1.0.6](https://github.com/release-jf/release-hope/compare/v1.0.5...v1.0.6) (2023-04-09)
+
+
+### 🐛Bug Fixes
+
+* **docs:** 更新 ([c2ee2d5](https://github.com/release-jf/release-hope/commit/c2ee2d5b214f8c278068dba3730b39fd1a85957c))
+
 ## [1.0.5](https://github.com/release-jf/release-hope/compare/v1.0.4...v1.0.5) (2023-04-09)
 
 
