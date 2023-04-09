@@ -22,7 +22,8 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
-          body: [CHANGELOG.md](https://github.com/release-jf/release-hope/releases/tag/${{ github.ref }})
+          body: |
+           [CHANGELOG.md](https://github.com/release-jf/release-hope/releases/tag/${{ github.ref }})
           draft: false
           prerelease: false
           
