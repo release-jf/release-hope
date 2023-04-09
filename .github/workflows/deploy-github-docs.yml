@@ -10,7 +10,7 @@ jobs:
   deploy-github-pages:
     name: Deploy docs to GitHub pages
     runs-on: ubuntu-latest
-    if: github.repository == 'release-hope/release-hope'
+    if: github.repository == 'release-jf/release-hope'
     steps:
       - name: Checkout
         uses: actions/checkout@v3

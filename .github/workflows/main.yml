@@ -9,7 +9,6 @@ on:
   pull_request:
     branches:
       - main
-      - work
 
 jobs:
   build-project:
@@ -19,7 +18,7 @@ jobs:
   deploy-github-docs:
     name: Deploy GitHub Docs
     # Only triggered on main or work branch
-    if: github.ref_name == 'main' || github.ref_name == 'work'
+    if: github.ref_name == 'main'
     needs:
       - build-project
     uses: ./.github/workflows/deploy-github-docs.yml
