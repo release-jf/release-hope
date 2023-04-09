@@ -1,4 +1,4 @@
-const fs = require("node:fs");
+/** const fs = require("node:fs");
 const path = require("path");
 const { execSync } = require("child_process");
 
@@ -11,17 +11,40 @@ const scopeComplete = execSync("git status --porcelain || true")
   .find((r) => ~r.indexOf("M  packages"))
   ?.replace(/\//g, "%%")
   ?.match(/packages%%((\w|-)*)/)?.[1];
+*/
 
 /** @type {import('cz-git').UserConfig} */
 module.exports = {
   extends: ["@commitlint/config-conventional"],
   rules: {
-    "scope-enum": [2, "always", ["demo", "release", ...packages]],
+    "scope-enum": [2, "always", ["docs","test","demo", "release",]],
   },
   prompt: {
-    defaultScope: scopeComplete,
-    customScopesAlign: !scopeComplete ? "top" : "bottom",
+   /** defaultScope: scopeComplete,
+    customScopesAlign: !scopeComplete ? "top" : "bottom", */
     allowCustomIssuePrefix: false,
     allowEmptyIssuePrefix: false,
   },
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
