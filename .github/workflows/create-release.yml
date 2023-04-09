@@ -1,0 +1,42 @@
+name: CI Create Release
+
+on:
+  workflow_call:
+    secrets:
+      RELEASE_TOKEN:
+        required: true
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Please refer to [CHANGELOG.md](https://github.com/release-jf/release-hope/blob/main/CHANGELOG.md) for details.
+          draft: false
+          prerelease: false
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
