@@ -21,11 +21,30 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            Please refer to [CHANGELOG.md](https://github.com/release-jf/release-hope/blob/main/CHANGELOG.md) for details.
+          release_name: ${{ github.ref }}
+          body: [CHANGELOG.md](https://github.com/release-jf/release-hope/releases/tag/${{ github.ref }})
           draft: false
           prerelease: false
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
           
           
           
