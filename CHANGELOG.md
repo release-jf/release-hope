@@ -4,6 +4,13 @@
 
 <!-- #region recent-beta -->
 
+## [1.0.7](https://github.com/release-jf/release-hope/compare/v1.0.6...v1.0.7) (2023-04-09)
+
+
+### 🐛Bug Fixes
+
+* **docs:** gx ([1cb2488](https://github.com/release-jf/release-hope/commit/1cb24883b1b0a6b1318713909e88066cd557f13c))
+
 ## [1.0.6](https://github.com/release-jf/release-hope/compare/v1.0.5...v1.0.6) (2023-04-09)
 
 
