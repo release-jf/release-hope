@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "build OK 666.",
-    "commit": "git add -A && git status && pnpm git-cz",
-    "docs:vite-build": "docs build OK 99999.",
+    "build": "echo build OK 666.",
+    "commit": "git add -A && pnpm git-cz",
+    "docs:vite-build": "echo docs build OK 99999.",
     "prepare": "husky install",
     "release": "pnpm release:bump && pnpm release:publish",
     "release:bump": "bumpp -r --execute=\"pnpm commit-and-tag-version && git add CHANGELOG.md\" --commit \"chore(release): publish v%s\" --all --tag --push",
