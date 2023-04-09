@@ -1,0 +1,27 @@
+{
+  "header": "# Change Log\n\n项目全部更新记录\n\n<!-- #region recent-beta -->\n",
+
+  "releaseCommitMessageFormat": "chore(release): publish v{{currentTag}}",
+
+  "types": [
+    { "type": "✨Feat", "section": "Features" },
+    { "type": "fix", "section": "🐛Bug Fixes" },
+    { "type": "improvement", "section": "⚙️Feature Improvements | 功能的改进" },
+    { "type": "perf", "section": "⚡️Performance Improvements | 性能改进" },
+    { "type": "revert", "section": "⏪️Reverts" },
+    { "type": "docs", "section": "📚Documentation", "hidden": true },
+    { "type": "style", "section": "🎨Styles", "hidden": true },
+    { "type": "chore", "section": "Miscellaneous Chores", "hidden": true },
+    { "type": "refactor", "section": "♻️Code Refactoring", "hidden": true },
+    { "type": "test", "section": "🧪Tests", "hidden": true },
+    { "type": "build", "section": "📦️Build System", "hidden": true },
+    { "type": "ci", "section": "🎡Continuous Integration", "hidden": true 
+    }
+  ],
+
+  "skip": {
+    "bump": true,
+    "commit": true,
+    "tag": true
+  }
+}

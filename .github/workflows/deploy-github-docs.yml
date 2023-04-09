@@ -1,0 +1,36 @@
+name: Deploy Docs
+
+on:
+  workflow_call:
+    secrets:
+      ACCESS_TOKEN:
+        required: true
+
+jobs:
+  deploy-github-pages:
+    name: Deploy docs to GitHub pages
+    runs-on: ubuntu-latest
+    if: github.repository == 'release-hope/release-hope'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19
+          cache: pnpm
+
+      - name: Docs build
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm run docs:vite-build

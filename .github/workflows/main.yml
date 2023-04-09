@@ -1,0 +1,27 @@
+name: Main Action
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - v**
+  pull_request:
+    branches:
+      - main
+      - work
+
+jobs:
+  build-project:
+    name: Build Project
+    uses: ./.github/workflows/build-project.yml
+
+  deploy-github-docs:
+    name: Deploy GitHub Docs
+    # Only triggered on main or work branch
+    if: github.ref_name == 'main' || github.ref_name == 'work'
+    needs:
+      - build-project
+    uses: ./.github/workflows/deploy-github-docs.yml
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}

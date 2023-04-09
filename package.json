@@ -1,0 +1,69 @@
+{
+  "name": "release-hope",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "build OK 666.",
+    "commit": "git add -A && git status && pnpm git-cz",
+    "docs:vite-build": "docs build OK 99999.",
+    "prepare": "husky install",
+    "release": "pnpm build && pnpm release:bump && pnpm release:publish",
+    "release:bump": "bumpp -r --execute=\"pnpm commit-and-tag-version && git add CHANGELOG.md\" --commit \"chore(release): publish v%s\" --all --tag --push",
+    "release:publish": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/release.ts"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.5.1",
+    "@commitlint/config-conventional": "17.4.4",
+    "@types/inquirer": "9.0.3",
+    "bumpp": "9.1.0",
+    "commit-and-tag-version": "11.2.1",
+    "commitizen": "4.3.0",
+    "cross-env": "7.0.3",
+    "cz-git": "1.6.1",
+    "execa": "7.1.1",
+    "husky": "8.0.3",
+    "inquirer": "9.1.5",
+    "nano-staged": "0.8.0",
+    "ora": "6.3.0",
+    "picocolors": "1.0.0",
+    "sort-package-json": "2.4.1",
+    "tslib": "2.5.0",
+    "tsx": "3.12.6",
+    "typescript": "5.0.4"
+  },
+  "packageManager": "pnpm@8.0.0",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8",
+    "pnpm": ">=7"
+  },
+  "pnpm": {
+    "overrides": {
+      "cacache": "^17.0.4",
+      "chokidar": "^3.5.3",
+      "css": "npm:@adobe/css-tools@^4.0.1",
+      "glob-stream": "^7.0.0",
+      "glob-parent": "^6.0.2",
+      "micromatch": "^4.0.5",
+      "yargs-parser": "^21.1.1"
+    },
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "@types/react",
+        "eslint-plugin-import",
+        "eslint-plugin-n",
+        "eslint-plugin-promise",
+        "react",
+        "react-dom",
+        "webpack"
+      ]
+    }
+  }
+}
