@@ -1,10 +1,11 @@
 # release-hope
 
-使用vuepress-theme-hope主题的提交机制
+使用 `vuepress-theme-hope` 主题的提交机制
 
 提交步骤：
 - `pnpm run commit` 设置git消息
 - `pnpm run release` 生成changelog，提交并生成版本
+
 
 ```shell
 
